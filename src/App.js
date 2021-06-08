@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+const flag = true;
+const logik = false;
+const count = 31;
+var sum;
 
 function App() {
   return (
@@ -9,8 +13,25 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
+        <p style={{
+          color: 'blue',
+          fontSize: '42px'
+        }}>
           Hello World!
+        </p>
+        <p>
+          {count}
+        </p>
+        <p>
+          {flag && 'flag is true'}
+          {undefined}
+          {null}
+        <p>
+          {logik ? 'logik is true' : 'logik is false'}
+        </p>
+        </p>
+        <p>
+          {sum = 23 +10}
         </p>
         <a
           className="App-link"
