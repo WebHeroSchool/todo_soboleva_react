@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import {count} from './number';
+import {length} from './number';
+
 const flag = true;
 const logik = false;
-const count = 31;
+const c = 31;
 var sum;
 
 function App() {
@@ -17,10 +20,7 @@ function App() {
           color: 'blue',
           fontSize: '42px'
         }}>
-          Hello World!
-        </p>
-        <p>
-          {count}
+          {c}
         </p>
         <p>
           {flag && 'flag is true'}
@@ -32,6 +32,9 @@ function App() {
         </p>
         <p>
           {sum = 23 +10}
+        </p>
+        <p>
+         {'count * length ='} {count*length}
         </p>
         <a
           className="App-link"
