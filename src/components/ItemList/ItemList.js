@@ -1,12 +1,10 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const ItemList = ({todoItem}) => (
-  <ul>
-    <li><Item todoItem={todoItem}/></li>
-    <li><Item todoItem={'Прописать props-ы'}/></li>
-    <li><Item todoItem={'Закончить задание'}/></li>
-  </ul>
-);
+const ItemList = ({ items }) => (<ul>
+     {items.map(item => <li key={item.value}>
+          <Item value={item.value} />
+     </li>)}
+</ul>);
 
 export default ItemList;
