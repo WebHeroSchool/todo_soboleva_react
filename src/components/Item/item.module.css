@@ -1,7 +1,17 @@
-.item{
-  color:#333;
+.item {
+    color: black;
 }
-
-.done{
-  color: #c4c4c4;
+.done {
+    text-decoration: line-through;
+}
+.btn {
+    cursor: pointer;
+    color: darkgrey;
+}
+.wrap {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    font-family: Georgia;
 }
