@@ -5,23 +5,21 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 
-const Item = ({ value, isDone, onClickDone, onClickDelete, id }) => (
+const Item = ({ value, isDone}) =>
     <div className={styles.wrap}>
 		<Checkbox
-            checked={isDone}
-	        color="default"
+          color="default"
+          value="default"
 	        inputProps={{ 'aria-label': 'primary checkbox' }}
-            onClick={() => onClickDone(id)}
 	      />
-		<label className = {
+		<span className = {
 			classnames({
 				[styles.item]: true,
 				[styles.done]: isDone
 			})
 		}> {value}
-		</label>
-             <DeleteIcon className={styles.btn} fontSize="large"
-             onClick={() => onClickDelete(id)} />
-       </div>);
+    </span>
+             <DeleteIcon className={styles.btn} fontSize="large" />
+    </div>;
 
 export default Item;
