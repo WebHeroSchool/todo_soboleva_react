@@ -1,8 +1,10 @@
-footer {
+.footer {
+    color: #d3d3d3;
+    margin-right: 4%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    margin-top: 6%;
-    font-size: 12px;
-    font-family: Arial;
+}
+.button {
+    font-size: 5px;
 }
