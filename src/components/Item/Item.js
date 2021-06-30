@@ -5,13 +5,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 
-const Item = ({value, isDone, onClickDone}) =>
+const Item = ({value, isDone, id, onClickDone}) =>
     <div className={styles.wrap}>
 		<Checkbox
           checked={isDone}
           color="default"
 	        inputProps={{ 'aria-label': 'primary checkbox' }}
-            onClick={() => onClickDone(isDone)}
+            onClick={() => onClickDone(id)}
 	  />
 		<label className = {
 			classnames({
