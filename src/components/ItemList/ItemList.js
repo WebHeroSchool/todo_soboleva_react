@@ -3,13 +3,16 @@ import List from '@material-ui/core/List';
 import styles from './ItemList.module.css';
 import Item from '../Item/Item';
 
-const ItemList = ({ items }) =>
-<div className={styles.ItemList}>
-    {items.map(item =>
-    <Item key={item.value}
-        Item value={item.value}
-        isDone={item.isDone} />
-    )}
-</div>;
+
+const ItemList = ({items, onClickDone}) => (<List>
+    {items.map(item => <li key={item.value}>
+        <Item
+          value={item.value}
+          isDone={item.isDone}
+          id={item.id}
+          onClickDone={onClickDone}/>
+    </li>)}
+</List>);
+
 
 export default ItemList;
