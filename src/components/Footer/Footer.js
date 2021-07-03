@@ -12,5 +12,8 @@ const Footer = ({ count }) => (<footer>
 </ButtonGroup>
 </footer>)
 
+Footer.defaultProps = {
+  count: 0
+};
 
 export default Footer;
