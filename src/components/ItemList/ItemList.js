@@ -1,5 +1,6 @@
 import React from 'react';
 import List from '@material-ui/core/List';
+import PropTypes from 'prop-types';
 import styles from './ItemList.module.css';
 import Item from '../Item/Item';
 
@@ -14,10 +15,10 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (<List>
     </li>)}
 </List>);
 
-ItemList.defaultProps = {
-  value: 'Добавить новое задание',
-  isDone: false,
-  id: 0
+ItemList.propTypes = {
+  items: PropTypes.array.isRequired,
+  onClickDone: PropTypes.func.isRequired,
+  onClickDelete: PropTypes.func.isRequired
 };
 
 
