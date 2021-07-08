@@ -1,7 +1,6 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 import PropTypes from 'prop-types';
-import styles from './ItemList.module.css';
 import Item from '../Item/Item';
 
 const ItemList = ({items, onClickDone, onClickDelete}) => (<List>
