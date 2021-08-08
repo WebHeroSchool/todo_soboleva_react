@@ -1,6 +1,6 @@
 .siderbar {
   grid-area: siderbar;
-  margin: 50px auto;
+  margin: 0px auto;
 }
 
 .content{
