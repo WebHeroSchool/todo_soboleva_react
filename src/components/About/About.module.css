@@ -1,5 +1,32 @@
-.about {
-    position: relative;
+.img {
+    width: 50%;
+    height: 50%;
+    border-radius: 4%;
+}
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.username {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.username:hover {
+    color: red;
+}
+.link{
+    text-decoration: none;
+    color: black;
+    font-family: Georgia,'Times New Roman', Times, serif;
+}
+.link:hover{
+    color:red;
+}
+h1 {
     text-align: center;
-    margin: 50px auto;
+    color: red;
+    font-family: Georgia;
 }
