@@ -1,72 +1,33 @@
 import React from 'react';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+
+import Todo from '../Todo/Todo';
+import About from '../About/About';
+import Contacts from '../Contacts/Contacts';
+
 import styles from './App.module.css';
 
-class App extends React.Component {
-  state = {
-     items: [
-            {
-                value: 'Написать новое приложение',
-                isDone: true,
-                id:1
-            },
-            {
-                value: 'Прописать props',
-                isDone: false,
-                id:2
-            },
-            {
-                value: 'Сделать все дела',
-                isDone: true,
-                id:3
-            }
-      ],
-      count: 3
-  };
+const App = () => (
+  <Router>
+     <div className={styles.wrap}>
+       <Card className={styles.siderbar}>
+          <MenuList>
+           <Link to='/'className={styles.link}><MenuItem>About</MenuItem></Link>
+           <Link to='/Todo'className={styles.link}><MenuItem>Todo</MenuItem></Link>
+           <Link to='/Contacts'className={styles.link}><MenuItem>Contacts</MenuItem></Link>
+          </MenuList>
+        </Card>  
 
-  onClickDone = id => {
-    const newItemList = this.state.items.map(item => {
-      const newItem = {...item};
+        <Card className={styles.content}>
+              <Route path='/' exact component={About} />
+              <Route path='/todo' component={Todo} />
+              <Route path='/contacts' component={Contacts} />
+        </Card>
+    </div>
+  </Router>);
 
-      if (item.id === id) {
-        newItem.isDone = !item.isDone;
-      }
-
-      return newItem;
-    });
-
-    this.setState({items: newItemList});
-  };
-
-  onClickDelete = id => this.setState(state =>
-    ({ items: state.items.filter(item => item.id !== id)}));
-
-  onClickAdd = value => this.setState (state => ({
-    items: [
-        ...state.items,
-        {
-           value,
-           isDone: false,
-           id: state.count + 1
-        }
-    ],
-      count: state.count + 1
-  }));
-
-    render () {
-        return (
-          <div className={styles.wrap}>
-          <h1 className={styles.title}>Важные дела:</h1>
-          <InputItem onClickAdd={this.onClickAdd} />
-          <ItemList
-             items={this.state.items}
-             onClickDone={this.onClickDone}
-             onClickDelete={this.onClickDelete}/>
-          <Footer count = {this.state.count} />
-      </div>);
-   }
-};
 
 export default App;
